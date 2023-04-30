@@ -1,0 +1,21 @@
+#map {
+    height:50%;
+    width:49%;
+    right:0;
+    position:fixed;
+    display:inline-block;
+}
+
+.players {
+    width:49%;
+    display:inline-block;
+    margin-top:15px;
+}
+#streams {
+    width:49%;
+    display:inline-block;
+}
+
+.leaflet-popup-content-wrapper {
+    border: none;
+}
