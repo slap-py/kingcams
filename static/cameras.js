@@ -37,6 +37,30 @@ function addStream(ID){
     complete=false
     
 }
+
+
+function addRdot(ID){
+    if(identifiers.includes(ID.target.identifier2)){
+        idx = identifiers.indexOf(ID.target.identifier2)
+        document.getElementById('streams').removeChild(document.getElementById('streams').children[idx])
+        ID.target.setStyle({fillColor:'#696969'})
+        containers.splice(idx,1)
+        identifiers.splice(idx,1)
+    }else{
+        console.log(ID.target.identifier)
+        link = `https://gis.redmond.gov/traffic/tcimages/${ID.target.identifier}.jpg`
+        image = document.createElement('img')
+        image.id=ID.target.identifier2
+        image.className = 'players'
+        image.src = link
+        ID.target.setStyle({fillColor:'#c17a43'})
+
+        containers.push(image)
+        identifiers.push(ID.target.identifier2)
+        document.getElementById('streams').appendChild(image)
+    }
+    
+}
 function httpGet(theUrl) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
