@@ -48,7 +48,12 @@ function addRdot(ID){
         identifiers.splice(idx,1)
     }else{
         console.log(ID.target.identifier)
-        link = `https://gis.redmond.gov/traffic/tcimages/${ID.target.identifier}.jpg`
+        if(ID.target.identifier.includes('VC')){
+            link = `https://images.wsdot.wa.gov/nw/${ID.target.identifier}.jpg`
+        }else{
+            link = `https://gis.redmond.gov/traffic/tcimages/${ID.target.identifier}.jpg`
+        }
+        
         image = document.createElement('img')
         image.id=ID.target.identifier2
         image.className = 'players'
@@ -61,6 +66,7 @@ function addRdot(ID){
     }
     
 }
+
 function httpGet(theUrl) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
