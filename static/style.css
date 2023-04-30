@@ -1,9 +1,10 @@
 #map {
-    height:50%;
+    height:100%;
     width:49%;
     right:0;
     position:fixed;
     display:inline-block;
+    top:0;
 }
 
 .players {
@@ -18,4 +19,7 @@
 
 .leaflet-popup-content-wrapper {
     border: none;
+}
+.leaflet-popup-content-wrapper:focus{
+    border:none;
 }

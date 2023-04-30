@@ -9,6 +9,7 @@ function addStream(ID){
         idx = identifiers.indexOf(ID.target.identifier2)
         document.getElementById('streams').removeChild(document.getElementById('streams').children[idx])
         ID.target.setStyle({fillColor:'#438cc1'})
+        players[idx].dispose()
         players.splice(idx,1)
         containers.splice(idx,1)
         identifiers.splice(idx,1)
